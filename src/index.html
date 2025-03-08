@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Subscribers</title>
+    <!-- Favicon for the website -->
+    <link rel="icon" href= "/favicon.ico"  type="image/x-icon" >
+    <!-- Importing Tailwind CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-r from-indigo-800 to-indigo-400 flex items-center justify-center min-h-screen">
+    <div class="max-w-4xl p-8 border-4 border-gray-300 bg-white rounded-lg">
+        <h1 class="text-4xl font-bold text-center mb-6">GET YOUTUBE SUBSCRIBERS</h1>
+        <p class="mb-6 ml-4">
+            The APIs provided by this application for YouTube subscribers</p>
+        <ol class="list-decimal ml-8 ">
+             <!-- API endpoint for retrieving all subscribers -->
+            <li class="mb-6">
+                <h3 class="font-bold"> Response with an array of subscribers</h3>
+                <p>GET <a href="https://yt-subscribers-fed3.onrender.com/subscribers" class="text-blue-500">/subscribers</a> Returns an array of all subscribers in the
+                database</p>
+            </li>
+            <!-- API endpoint for retrieving subscribers with only name and subscribedChannel fields -->
+            <li class="mb-6">
+                <h3 class="font-bold">Response with an array of subscribers(an Object with only two fields name and subscribedChannel)</h3>
+                <p>GET <a href="https://yt-subscribers-fed3.onrender.com/subscribers/names" class="text-blue-500">/subscribers/names</a> Returns an array of subscribers with only two fields name and
+                subscribedChannel</p>
+            </li>
+            <!-- API endpoint for retrieving a subscriber with a given ID -->
+            <li class="mb-6">
+                <h3 class="font-bold">Response with a subscriber with given id</h3>
+                <p>For Example ID : <span  id="copy">6616c86d4f8aaa50c81c9631</span><button class="bg-green-500 text-white rounded px-1 py-1" onclick="copyText()">Copy</button> </p>
+                <!-- Input field for entering subscriber ID -->
+                <input placeholder="Enter ID" type="text" id="input-id" class="border border-gray-300 rounded px-2 py-2">
+                <!-- Button to trigger the API call for retrieving subscriber details -->
+                <button onclick="updateLink()" class="bg-blue-500 text-white px-4 py-2 rounded">GET</button>
+                <br>
+
+                <!-- Placeholder for displaying API endpoint dynamically -->
+                <span id="add-html"></span>
+            </li>
+        </ol>
+    </div>
+
+
+
+    <!-- JavaScript functions for updating link and copying text -->
+    <script>
+
+        // Function to update the link dynamically with the entered ID
+        function updateLink() {
+            const inputId = document.getElementById('input-id').value;
+            const span = document.getElementById('add-html');
+            // Update the innerhtml  within the span element
+            span.innerHTML = `GET <a href="https://yt-subscribers-fed3.onrender.com/subscribers/${inputId}" class="text-blue-500">/subscribers/${inputId}</a>  Returns the details of a subscriber with the given ID;`;
+        }
+
+        // Function to copy text to clipboard
+        function copyText() {
+            const paragraph = document.getElementById('copy');
+            const text = paragraph.textContent;
+            navigator.clipboard.writeText(text)
+        }
+    
+    </script>
+</body>
+
+</html>
+
+
