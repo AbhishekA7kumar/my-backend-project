@@ -1,7 +1,7 @@
 const express = require('express')
 const app = require('./app.js')
 const mongoose = require('mongoose')
-const port = process.env.port || 3000;
+const port = process.env.port || 4000;
 
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json())

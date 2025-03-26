@@ -16,6 +16,8 @@
     "express": "^4.21.2",
     "mongoose": "^8.12.1",
     "path": "^0.12.7",
+
+    
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {

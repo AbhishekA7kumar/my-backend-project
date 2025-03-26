@@ -1,1 +1,7 @@
 node_modules/
+.qodo
+
+# Local Netlify folder
+.netlify
+
+.vercel
